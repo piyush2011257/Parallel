@@ -1,0 +1,46 @@
+MPI_Group group_world
+MPI_Group first_row_group
+MPI_Comm first_row_comm
+int *process_ranks= new int[q];
+// list of processes to be assigned to new group
+for ( i=0; i<q; i++ )
+	process_ranks[i]=i;
+
+// Get the group underlying in MPI_COMM_WORLD
+MPI_Comm_group(MPI_COMM_WORLD, &group_world);
+
+int MPI_Comm_group ( MPI_COmm comm in, MPI_Groupp* group //out)
+
+// Create new group of row
+MPI_Group_incl(group_world,q,process_ranks,&first_row_groups);
+
+MPI_Group_incl ( MPI_Group old_group //in, int new_group_size //in, int ranks_in_old_group[] //in, MPI_Group *new_group //out )
+creates a new group from a list of process in existing group,old_group. Process 0 in new_group has rank ranks_in_old_process[0]in old groups, process 1 in new group has rank rank_in_old_group[1] in old groups, etc.
+This means suppose we want to create a comm from process 3,6,9,12
+so for (i=1; i<=4; i++)
+	process_ranks[i-1]=i"*3;
+this means
+	porcess 0 of new_comm == process_ranks[0]= 3 in old comm
+	porcess 1 of new_comm == process_ranks[1]= 6 in old comm
+	porcess 2 of new_comm == process_ranks[2]= 9 in old comm
+	porcess 3 of new_comm == process_ranks[3]= 12 in old comm
+
+The above 2 functions are local functons i.e. there is no communicatioon among processes involved in theor execution
+
+// Create new row comm
+MPI_Comm_create(MPI_COMM_WORLD, first_row_group, &first_row_comm);
+It is a collective operation. ALl the process of old_comm including the ine's that are not part of the new_comm must call this function
+
+Using grid_comm method we were not required to create any group explicitly-
+1- Create grid_comm (cartesian arrangement)
+2- Use MPI_Split() to get row and col comm
+
+int MPI_Cart_sub ( MPI_Comm cart_comm //in, int free_coords[] //in, MPI_Comm* new_comm //out )
+e.g. 2d grid into row and col comm
+MPI_Comm col_comm;
+free_coords[0]=1;
+free_coords[1]=0;
+MPI_Cart_sub ( grid_comm, free_coords, &col_comm );
+
+
+free_coords[i]=0 -> then ith coordinate is fixed for the new communicator

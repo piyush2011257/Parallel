@@ -1,0 +1,49 @@
+1- Algorithmic Library
+
+revise for coding competition
+2- Advanced Tree structures- Link-Cut Tree, Segment Tree with application to dynamic queries, Treap, Splay Tree, Scapegoat Tree
+
+revise + test
+3- Multidimensional Data Indexing- Work on it to get data analysis- KD, KDB, Gtree
+
+4- Parallel Scientific Computing- Fox, Cannon, Matrix Vector (Row / Col / Checkerboard ), SUMMA, PUMMA, Sieve of Eratosthenes
+
+5- Parallel Computing- Sorting- Quick, Merge, Bucket, Radix, Bitonic, OddEven, Rank (Comparison of sequenctial vs parallel )
+
+Parallelise as you study DP for competitive programming
+6- Parallel Computing- Dynamic Programming- Floyd (variants), Dynamic Porgamming (LCS, LIS, Knapsack, RMQ, LCA)
+
+After November (most probably )
+7- Parallel Computing- Graph Algorithms- Floyd (variants), DFS, BFS, Connectivity, MST- Kruskal, TSP, Graph Coloring
+8- Shared Memory Programming- Multicore Programming- OpenMP
+
+start learning CUDA during semester itself
+9- GPU Programming- CUDA / OpenCL- Image Processing Apllications
+
+
+Technical Achivements:
+SPOJ
+Codechef
+Codechef college top
+SPOJ college top
+Interviewstreet
+Co-cordinator Programing Club
+Technical Council
+2 workshops
+Abhikalpan
+
+Topics covered till 6th sem:
+1- Data Structure and Algorithms
+2- Graph Theory
+3- Parallel Algorithms
+4- Distributed Computing
+5- Multicore Computing
+6- GPU Computing
+7- Networks
+
+Plan-
+July-
+OBST-1st 2 versions, Fox (Row, Col, Checkerboard), Cannon  (Row, Col, Checkerboard)
+
+August-
+OBST-Dynamic Version, SUMMA / PUMMA, Quicksort, HyperQuick Sort, MergeSort
